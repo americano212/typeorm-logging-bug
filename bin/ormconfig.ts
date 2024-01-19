@@ -16,7 +16,6 @@ const ormconfig = async (): Promise<DataSource> => {
     logging: false,
     namingStrategy: new SnakeNamingStrategy(),
     entities: [`src/**/*.entity{.ts,.js}`],
-    migrations: [`src/seeds/**/*.{js,ts}`],
   });
 
   async function connectionCheck() {
