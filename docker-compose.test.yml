@@ -2,8 +2,8 @@ services:
   db:
     image: mysql/mysql-server:latest
     ports:
-      - ${TEST_DB_PORT}:3306
+      - 33061:3306
     environment:
       - MYSQL_ROOT_HOST=%
-      - MYSQL_ROOT_PASSWORD=${TEST_DB_PASSWORD}
-      - MYSQL_DATABASE=${TEST_DB_NAME}
+      - MYSQL_ROOT_PASSWORD=test1234!
+      - MYSQL_DATABASE=test_database

@@ -3,7 +3,6 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 
 import { configuration } from '../src/config';
 import SnakeNamingStrategy from 'typeorm-naming-strategy';
-import { DatabaseConnectionException } from 'src/common/exceptions';
 
 dotenv.config();
 
@@ -15,7 +14,6 @@ const ormconfig = async (): Promise<DataSource> => {
   const dataSource = new DataSource({
     ...config.db,
     logging: false,
-    logger: 'file',
     namingStrategy: new SnakeNamingStrategy(),
     entities: [`src/**/*.entity{.ts,.js}`],
     migrations: [`src/seeds/**/*.{js,ts}`],
@@ -27,7 +25,7 @@ const ormconfig = async (): Promise<DataSource> => {
       .then(() => {
         console.log('[SUCCESS] Data Source has been initialized!');
       })
-      .catch(async (err: DatabaseConnectionException) => {
+      .catch(async (err: any) => {
         console.error('[FAILED] Error during Data Source initialization');
         if (err.code === 'PROTOCOL_CONNECTION_LOST') {
           console.log('[RECONNECT] Retrying connection');
