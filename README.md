@@ -14,6 +14,7 @@ npm run entity:sync # (Need to few time(~30s) for DB loading.)
 ## Description
 
 When I set option 'logging: false'...
+
 However, queries were output with sensitive information.
 
 ### /bin/ormconfig.ts
@@ -26,7 +27,7 @@ const dataSource = new DataSource({
   });
 ```
 
-### Result
+### Bug Result
 ```bash
 query: SELECT VERSION() AS `version`
 query: START TRANSACTION
