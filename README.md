@@ -13,7 +13,7 @@ npm run entity:sync # (Need to few time(~30s) for DB loading.)
 
 ## Description
 
-When I set option 'logging: false'...
+When I set option `logging: false`...
 
 However, queries were output with sensitive information.
 
