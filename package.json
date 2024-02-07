@@ -14,7 +14,7 @@
     "seed:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d bin/ormconfig.ts migration:revert"
   },
   "dependencies": {
-    "@nestjs/swagger": "^7.2.0",
+    "@nestjs/swagger": "^7.3.0",
     "@nestjs/typeorm": "^10.0.1",
     "class-validator": "^0.14.1",
     "mysql2": "^3.7.1",
